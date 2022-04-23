@@ -29,17 +29,17 @@ const serverEvent = async (req, res) => {
   if(url == '/posts' && method == 'GET') 
     await getDB(Post, res)
   else if(url == '/posts' && method == 'POST')
-    postDB(Post, res, body)
+    await postDB(Post, res, body)
   else if(url.startsWith('/posts/') && method == 'PATCH') 
-    patchOneDB(Post, res, body, url.split('/').pop())
+    await patchOneDB(Post, res, body, url.split('/').pop())
   else if(url.startsWith('/posts/') && method == 'DELETE') 
-    deleteOneDB(Post, res, url.split('/').pop())
+    await deleteOneDB(Post, res, url.split('/').pop())
   else if(url == '/posts' && method == 'DELETE')
-    deleteAllDB(Post, res)
+    await deleteAllDB(Post, res)
   else if(method == 'OPTION') 
-    successHandle(res)
+    await successHandle(res)
   else
-    errorHandle(res, error.NOT_FOUND, 404)
+    await errorHandle(res, error.NOT_FOUND, 404)
 }
 
 const server = http.createServer(serverEvent)
