@@ -12,7 +12,8 @@ const postDB = async function(Model, res, bodyChunk) {
     const chunk = JSON.parse(bodyChunk)
     const data = await insertOne(Model, chunk)
     successHandle(res, data)
-  } catch {
+  } catch(error) {
+    console.log(error, 'error-message!!')
     errorHandle(res, error.POST)
   }
 }
@@ -27,7 +28,8 @@ const patchOneDB = async function(Model, res, bodyChunk ,id) {
     } else {
       errorHandle(res, error.PATCH)
     }
-  } catch {
+  } catch(error) {
+    console.log(error, 'error-message!!')
     errorHandle(res, error.PATCH)
   }
 }
@@ -41,7 +43,8 @@ const deleteOneDB = async function(Model, res, id) {
     } else {
       errorHandle(res, error.DELETE)
     }
-  } catch {
+  } catch(error) {
+    console.log(error, 'error-message!!')
     errorHandle(res, error.DELETE)
   }
 }
