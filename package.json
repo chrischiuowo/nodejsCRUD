@@ -1,0 +1,28 @@
+{
+  "name": "nodetodolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanzion777/nodeTodoList.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanzion777/nodeTodoList/issues"
+  },
+  "homepage": "https://github.com/ryanzion777/nodeTodoList#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "mongoose": "^6.3.0",
+    "uuid": "^8.3.2"
+  },
+  "engines": {
+    "node": "v16.x"
+  }
+}
